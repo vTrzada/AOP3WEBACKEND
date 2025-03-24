@@ -1,0 +1,132 @@
+EMAIL 1:
+Prezados, Boa Tarde
+Para atender ao nosso primeiro desafio, vamos implementar o processamento assíncrono de dados utilizando o objeto XMLHttpRequest para realizar requisições a APIs REST na página principal do e-commerce da empresa no Brasil.
+1. Fluxo Completo da Requisição Assíncrona
+1.	Ação do Usuário: A requisição é disparada por um evento na interface (exemplo: clique em um botão, carregamento da página ou envio de formulário).
+2.	Criação do Objeto XMLHttpRequest: O JavaScript instancia um objeto XMLHttpRequest, permitindo a comunicação com o servidor.
+3.	Configuração da Requisição: O método .open(metodo, url, async) é utilizado para definir:
+o	O método HTTP da requisição (GET, POST, etc.).
+o	A URL do endpoint da API REST.
+o	O parâmetro async = true, garantindo que a requisição ocorra de forma assíncrona.
+4.	Definição do Callback para Resposta: O evento onreadystatechange é configurado para monitorar mudanças no estado da requisição.
+5.	Envio da Requisição: O método .send() é utilizado para enviar os dados ao servidor.
+6.	Processamento da Resposta: Quando o servidor retorna a resposta, os dados recebidos são processados para atualizar a interface do usuário.
+
+Atenciosamente,
+
+Victor
+
+Segue o codigo a seguir para que possa clonar o projeto
+
+// Função para buscar os dados da API
+function buscarProdutos() {
+    // Criando a requisição
+    let xhr = new XMLHttpRequest();
+
+    // Configurando a requisição (método, URL e assíncrono)
+    xhr.open("GET", "https://api.exemplo.com/produtos", true);
+
+    // O que fazer quando a resposta chegar
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) { // 4 significa que a requisição terminou
+            if (xhr.status === 200) { // 200 = sucesso
+                try {
+                    // Convertendo a resposta para JSON
+                    let dados = JSON.parse(xhr.responseText);
+                    console.log("Produtos recebidos:", dados);
+                    mostrarNaTela(dados);
+                } catch (erro) {
+                    console.error("Erro ao processar a resposta:", erro);
+                }
+            } else {
+                console.error("Erro na requisição. Status:", xhr.status);
+            }
+        }
+    };
+
+    // Caso aconteça algum erro de conexão
+    xhr.onerror = function () {
+        console.error("Erro ao tentar se conectar com o servidor.");
+    };
+
+    // Enviando a requisição
+    xhr.send();
+}
+
+// Função para atualizar a interface com os dados
+function mostrarNaTela(produtos) {
+    let lista = document.getElementById("lista-produtos");
+    lista.innerHTML = ""; // Limpando antes de adicionar novos
+
+    produtos.forEach(produto => {
+        let item = document.createElement("li");
+        item.textContent = `${produto.nome} - R$ ${produto.preco}`;
+        lista.appendChild(item);
+    });
+}
+
+// Chamando a função ao carregar a página
+document.addEventListener("DOMContentLoaded", buscarProdutos);
+
+
+
+
+E-mail 2: Instruções para Clonar o Repositório no GitHub
+Assunto: Configuração do Projeto para Desenvolvimento Colaborativo
+
+Prezados, novamente Boa Tarde
+
+Para garantir um desenvolvimento colaborativo, utilizaremos um repositório no GitHub. Seguem as instruções para clonar o projeto e contribuir com as implementações:
+
+1. Acesse o Repositório no GitHub
+Link do repositório: https://github.com/vTrzada/AOP3WEBACKEND/new/main
+
+2. Clonar o Repositório no Computador
+Abra o terminal e execute: https://github.com/vTrzada/AOP3WEBACKEND/new/main
+
+git clone 
+
+
+3. Navegar até a Pasta do Projeto
+
+cd projeto-ecommerce
+
+
+4. Criar uma Nova Branch para Implementação
+
+Para evitar conflitos no código, crie uma branch separada para cada funcionalidade:
+
+git checkout -b minha-feature
+
+
+5. Realizar Alterações no Código e Confirmar Mudanças
+
+Adicionar arquivos alterados:
+
+git add .
+
+Criar um commit com descrição da mudança:
+
+git commit -m "Descrição clara da implementação"
+
+
+6. Enviar a Alteração para o Repositório Remoto
+
+git push origin minha-feature
+
+
+7. Abrir um Pull Request (PR)
+Acesse o repositório no GitHub e crie um Pull Request para que o código seja revisado e integrado ao projeto principal.
+
+8. Boas Práticas para Colaboração
+ Sempre criar uma branch nova para cada feature.
+ Escrever mensagens de commit descritivas.
+ Antes de subir código, atualizar a branch local com git pull.
+ Revisar o código antes de abrir um Pull Request.
+
+Caso tenham dúvidas, estou à disposição!
+
+Atenciosamente,
+
+Victor
+
