@@ -81,17 +81,17 @@ Prezados, novamente Boa Tarde
 Para garantir um desenvolvimento colaborativo, utilizaremos um repositório no GitHub. Seguem as instruções para clonar o projeto e contribuir com as implementações:
 
 1. Acesse o Repositório no GitHub
-Link do repositório: https://github.com/vTrzada/AOP3WEBACKEND/new/main
+Link do repositório: https://github.com/vTrzada/AOP3WEBACKEND
 
 2. Clonar o Repositório no Computador
-Abra o terminal e execute: https://github.com/vTrzada/AOP3WEBACKEND/new/main
+Abra o terminal e execute: https://github.com/vTrzada/AOP3WEBACKEND
 
 git clone 
 
 
 3. Navegar até a Pasta do Projeto
 
-cd projeto-ecommerce
+cd projeto-AOP3
 
 
 4. Criar uma Nova Branch para Implementação
